@@ -43,6 +43,11 @@ variable "tagged_deletion_path_key" {
   default = "/"
 }
 
+variable "enable_versioning" {
+  type    = bool
+  default = false
+}
+
 
 
 # variable "bucket_iam_user" {

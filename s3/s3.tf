@@ -93,3 +93,11 @@ resource "aws_s3_bucket_policy" "public_policy" {
     ]
   })
 }
+
+resource "aws_s3_bucket_versioning" "versioning" {
+  count  = var.enable_versioning ? 1 : 0
+  bucket = aws_s3_bucket.s3_bucket.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
