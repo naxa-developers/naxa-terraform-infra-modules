@@ -44,7 +44,7 @@ resource "aws_s3_bucket_acl" "s3_bucket" {
 
 # Create 'public' directory
 resource "aws_s3_object" "public_folder" {
-  depends_on = [aws_s3_bucket.s3_bucket]
+  depends_on = [aws_s3_bucket.s3_bucket, aws_s3_bucket_acl.s3_bucket]
   count      = var.create_public_folder ? 1 : 0
   bucket     = aws_s3_bucket.s3_bucket.bucket
   key        = var.public_folder_key
