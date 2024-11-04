@@ -1,5 +1,5 @@
 locals {
-  bucket_name = var.bucket_name == "" ? var.application-var.environment : var.bucket_name
+  bucket_name = var.bucket_name == "" ? "${var.application}-${var.environment}" : var.bucket_name
 }
 # CREATE S3 Bucket
 resource "aws_s3_bucket" "s3_bucket" {
