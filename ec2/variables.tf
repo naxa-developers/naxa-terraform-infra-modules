@@ -27,6 +27,12 @@ variable "associate_public_ip_address" {
   default = true
 }
 
+variable "ec2_iam_instance_profile" {
+  type    = string
+  default = ""
+
+}
+
 variable "create_ssh_key_pair" {
   type    = bool
   default = true
