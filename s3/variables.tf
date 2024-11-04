@@ -1,5 +1,14 @@
-variable "bucket_name" {
+variable "application" {
   type = string
+}
+
+variable "environment" {
+  type = string
+}
+
+variable "bucket_name" {
+  type    = string
+  default = ""
 }
 
 variable "create_iam_user" {

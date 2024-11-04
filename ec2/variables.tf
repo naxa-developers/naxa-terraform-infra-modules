@@ -1,10 +1,10 @@
 #VARIABLES
 
-variable "project_name" {
+variable "application" {
   type = string
 }
 
-variable "environment_name" {
+variable "environment" {
   type = string
 }
 
@@ -13,7 +13,8 @@ variable "vpc_id" {
 }
 
 variable "ec2_instance_ami" {
-  type = string
+  type    = string
+  default = "ami-0dee22c13ea7a9a67"
 }
 
 variable "instance_type" {

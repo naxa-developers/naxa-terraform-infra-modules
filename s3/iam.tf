@@ -1,13 +1,13 @@
 # IAM user creation
 resource "aws_iam_user" "bucket_user" {
   count = var.create_iam_user ? 1 : 0
-  name  = var.bucket_username != null ? var.bucket_username : "${var.bucket_name}-access-user"
+  name  = var.bucket_username != null ? var.bucket_username : "${local.bucket_name}-access-user"
 }
 
 # IAM policy to allow the user read/write access to the entire bucket
 resource "aws_iam_policy" "bucket_rw_policy" {
   count       = var.create_iam_user ? 1 : 0
-  name        = "${var.bucket_name}-read-write-policy"
+  name        = "${local.bucket_name}-read-write-policy"
   description = "IAM policy to allow read/write access to the S3 bucket"
 
   policy = jsonencode({
