@@ -42,7 +42,7 @@ resource "aws_iam_user_policy_attachment" "user_policy_attachment" {
 }
 
 # IAM Access keys for the user
-resource "aws_iam_access_key" "bucket_user_access_key" {
-  count = var.create_iam_user ? 1 : 0
-  user  = aws_iam_user.bucket_user[count.index].name
-}
+# resource "aws_iam_access_key" "bucket_user_access_key" {
+#   count = var.create_iam_user ? 1 : 0
+#   user  = aws_iam_user.bucket_user[count.index].name
+# }
