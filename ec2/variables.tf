@@ -35,7 +35,7 @@ variable "ec2_iam_instance_profile" {
 
 variable "create_ssh_key_pair" {
   type    = bool
-  default = true
+  default = false
 }
 
 variable "ssh_private_key_store_path" {
