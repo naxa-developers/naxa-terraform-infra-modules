@@ -63,6 +63,11 @@ variable "ec2_sec_grps" {
   default     = []
 }
 
+variable "ec2_root_vol_size" {
+  type    = string
+  default = "15"
+}
+
 variable "ec2_ebs_volumes" {
   type = list(object({
     size     = number
@@ -134,3 +139,30 @@ variable "ec2_sec_grp_egress" {
     },
   ]
 }
+
+// TODO: Use object based config in future
+# variable "ec2_config" {
+#   type = object({
+#     ami                         = string
+#     instance_type               = string
+#     create_ssh_key_pair         = bool
+#     existing_ssh_key_pair_name  = string
+#     subnet_id                   = string
+#     vpc_id                      = string
+#     associate_public_ip_address = bool
+#     iam_instance_profile        = string
+#     root_volume_size            = string
+#   })
+
+#   default = {
+#     ami                         = "ami-0dee22c13ea7a9a67"
+#     instance_type               = "t2.small"
+#     create_ssh_key_pair         = false
+#     existing_ssh_key_pair_name  = ""
+#     subnet_id                   = null
+#     vpc_id                      = null
+#     associate_public_ip_address = true
+#     iam_instance_profile        = ""
+#     root_volume_size            = 15
+#   }
+# }

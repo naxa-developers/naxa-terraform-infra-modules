@@ -9,7 +9,7 @@ resource "aws_instance" "ec2_instance" {
   # user_data                   = file("${path.module}/Userdata/ec2-base.sh")
 
   root_block_device {
-    volume_size = "15"
+    volume_size = var.ec2_root_vol_size
   }
 
   metadata_options {
