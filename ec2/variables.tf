@@ -98,6 +98,7 @@ variable "ec2_sec_grp_ingress" {
     to_port     = number
     protocol    = string
     cidr_blocks = list(string)
+    description = optional(string)
   }))
 
   default = [
