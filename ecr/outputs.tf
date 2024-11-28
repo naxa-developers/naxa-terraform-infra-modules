@@ -15,5 +15,5 @@ output "ecr_repository_url" {
 
 output "lifecycle_policy" {
   description = "The lifecycle policy for the ECR repository."
-  value       = aws_ecr_lifecycle_policy.ecr_repo.policy
+  value       = aws_ecr_lifecycle_policy.ecr_repo_lifecycle.policy
 }

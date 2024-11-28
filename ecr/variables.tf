@@ -20,17 +20,17 @@ variable "scan_on_push" {
   default     = false
 }
 
-variable "encryption_type" {
-  description = "The type of encryption to use. Valid values are 'AES256' and 'KMS'."
-  type        = string
-  default     = "AES256"
-}
+# variable "encryption_type" {
+#   description = "The type of encryption to use. Valid values are 'AES256' and 'KMS'."
+#   type        = string
+#   default     = "AES256"
+# }
 
-variable "kms_key_id" {
-  description = "The KMS key ID to use for encryption when encryption_type is 'KMS'."
-  type        = string
-  default     = null
-}
+# variable "kms_key_id" {
+#   description = "The KMS key ID to use for encryption when encryption_type is 'KMS'."
+#   type        = string
+#   default     = null
+# }
 
 variable "prevent_destroy" {
   description = "Set to true to prevent the repository from being accidentally destroyed."

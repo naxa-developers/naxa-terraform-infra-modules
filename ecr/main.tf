@@ -11,13 +11,10 @@ resource "aws_ecr_repository" "ecr_repo" {
     Application = var.application
   }
 
-  lifecycle {
-    prevent_destroy = var.prevent_destroy
-  }
 }
 
-resource "aws_ecr_lifecycle_policy" "this" {
-  repository = aws_ecr_repository.this.name
+resource "aws_ecr_lifecycle_policy" "ecr_repo_lifecycle" {
+  repository = aws_ecr_repository.ecr_repo.name
 
   policy = <<EOL
 {
