@@ -10,6 +10,17 @@ resource "aws_instance" "ec2_instance" {
 
   root_block_device {
     volume_size = var.ec2_root_vol_size
+    volume_type = "gp3"
+  }
+
+  dynamic "block_device" {
+    for_each = var.ec2_ebs_volumes
+    content {
+      device_name           = block_device.value.device
+      volume_size           = block_device.value.size
+      volume_type           = block_device.value.type
+      delete_on_termination = true
+    }
   }
 
   metadata_options {
